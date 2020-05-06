@@ -1,5 +1,6 @@
 package br.com.projetoservicos.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -16,7 +17,11 @@ import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name="validade_prestador_tb")
-public class ValidadePrestador {
+public class ValidatePrestador implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -69,4 +74,8 @@ public class ValidadePrestador {
 	public void setAdmin(Admin admin) {
 		this.admin = admin;
 	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 }

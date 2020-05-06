@@ -1,5 +1,6 @@
 package br.com.projetoservicos.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,11 @@ import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name="qualificacao_tb")
-public class Qualificacao {
+public class Qualificacao implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -61,6 +66,9 @@ public class Qualificacao {
 	}
 	public void setServicos(List<Servico> servicos) {
 		this.servicos = servicos;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	
 	
